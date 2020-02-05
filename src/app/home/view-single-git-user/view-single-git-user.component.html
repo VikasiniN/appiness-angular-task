@@ -1,0 +1,8 @@
+<div class="container-fluid border">
+  <h5>{{ username | titlecase }}'s List of Repostries</h5>
+</div>
+<div class="row">
+  <div class="col-md-4" *ngFor="let data of userDetails">
+    <p>{{ data.name }}</p>
+  </div>
+</div>

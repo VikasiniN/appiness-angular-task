@@ -1,0 +1,30 @@
+<div class="container-fluid border border-dark">
+  <h5>List of Github Users</h5>
+</div>
+<div>
+  <input [(ngModel)]="searchText" placeholder="Search " />
+</div>
+<div class="row">
+  <div class="col-md-6 ">
+    <h5>GitHub User Name</h5>
+  </div>
+
+  <div class="col-md-6 ">
+    <h5>Url</h5>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 border-top">
+    <div
+      *ngFor="let data of gitUsers | search: searchText"
+      (click)="viewRepo(data.login)"
+    >
+      <p>{{ data.login | titlecase }}</p>
+    </div>
+  </div>
+  <div class="col-md-6 border-top">
+    <div *ngFor="let data of gitUsers | search: searchText">
+      <p>{{ data.html_url }}</p>
+    </div>
+  </div>
+</div>
